@@ -36,7 +36,7 @@
   "valid-data-paths": ["/root/ft_data/OIG/tokenized/unified_image_prompts_instructions/_text_document"],
   "train-data-weights":
     [
-      0.7,
+      0.2,
       # 0.5,
       0.2,
       0.01,
@@ -74,12 +74,9 @@
   "vocab-file": "/root/ft_data/meta/20B_tokenizer.json",
   # "merge-file": "/root/fm/config/gpt2-merges.txt",
   # "finetune": True,
-  "save": "/root/fm/models/ckpts/model_checkpoints",
-  "load": "/root/fm/models/ckpts/model_global_step100000",
   "checkpoint_validation_with_forward_pass": False,
   "tensorboard-dir": "tensorboard",
   "log-dir": "logs",
   "use_wandb": True,
-  "wandb_host": "https://api.wandb.ai",
-  "wandb_project": "neox",
+  "wandb_host": "https://api.wandb.ai"
 }

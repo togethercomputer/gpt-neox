@@ -1,9 +1,9 @@
 {
    "finetune": True,
-   # parallelism settings ( you will want to change these based on your cluster setup, ideally scheduling pipeline stages
+   # parallelism settings (you will want to change these based on your cluster setup, ideally scheduling pipeline stages
    # across the node boundaries )
-   "pipe-parallel-size": 4,
-   "model-parallel-size": 2, # one copy of the model per node
+   "pipe-parallel-size": 1,
+   "model-parallel-size": 8, # one copy of the model per node
    # model settings
    "num-layers": 32,
    "hidden-size": 2560,
@@ -19,7 +19,6 @@
    # these should provide some speedup but takes a while to build, set to true if desired
    "scaled-upper-triang-masked-softmax-fusion": true,
    "bias-gelu-fusion": true,
-
    # init methods
    "init_method": "small_init",
    "output_layer_init_method": "wang_init",
@@ -46,7 +45,7 @@
   #},
 
    # batch / data settings
-   "train_batch_size": 16, # across 1024 nodes... fingers crossed
+   "train_batch_size": 128, # across 1024 nodes... fingers crossed
   #  "train_micro_batch_size_per_gpu": 4,
    "gradient_accumulation_steps": 8,
    "data-impl": "mmap",
@@ -81,7 +80,8 @@
    "distributed-backend": "nccl",
    "lr-decay-style": "cosine",
    "warmup": 0.01,
-   "checkpoint-factor": 5000,
+   "checkpoint-factor": 200,
+   "checkpoint-scale": "linear",
    "eval-interval": 5000,
    "eval-iters": 10,
 

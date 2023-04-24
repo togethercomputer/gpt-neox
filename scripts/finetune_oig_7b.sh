@@ -1,0 +1,1 @@
+python ./deepy.py train.py -d configs instructions/7b.yml instructions/oig.yml

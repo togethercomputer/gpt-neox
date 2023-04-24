@@ -15,7 +15,7 @@ do
             --dataset-impl mmap \
             --tokenizer-type HFTokenizer \
             --append-eod \
-            --workers 20 &
+            --workers 3 &
 done
 
 # python tools/preprocess_data.py \
@@ -26,4 +26,4 @@ done
 #            --dataset-impl mmap \
 #            --tokenizer-type HFTokenizer \
 #            --append-eod \
-#            --workers 120
+#            --workers 3
