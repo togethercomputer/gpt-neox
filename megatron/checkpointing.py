@@ -231,6 +231,7 @@ def load_checkpoint(
             not neox_args.no_load_optim
         )  # TODO: These should be configured by separate args
         if neox_args.finetune:
+            print("!!FINETUNE mode is on!!")
             load_optim_and_scheduler = False
         if iteration is not None:
             tag = f"global_step{iteration}"
@@ -238,8 +239,10 @@ def load_checkpoint(
             tag = None
         checkpoint_name, state_dict = model.load_checkpoint(
             neox_args.load,
-            load_optimizer_states=load_optim_and_scheduler,
-            load_lr_scheduler_states=load_optim_and_scheduler,
+            # load_optimizer_states=load_optim_and_scheduler,
+            # load_lr_scheduler_states=load_optim_and_scheduler,
+            load_optimizer_states=False,
+            load_lr_scheduler_states=False,
             tag=tag,
         )
 

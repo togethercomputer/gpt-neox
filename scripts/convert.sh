@@ -1,0 +1,1 @@
+python tools/convert_hf_to_ckpt.py --model-name /root/fm/models/rp_3b_400b_real_fp16 --save-dir /root/fm/models/ckpts/rp_3b_400b_real_fp16

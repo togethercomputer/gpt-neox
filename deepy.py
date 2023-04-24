@@ -15,7 +15,6 @@
 
 import logging
 import os
-
 import deepspeed.launcher.runner
 
 
@@ -35,7 +34,6 @@ def main():
         os.environ["WANDB_API_KEY"] = wandb_token
 
     deepspeed.launcher.runner.main(deepspeed_main_args)
-
 
 if __name__ == "__main__":
     main()
